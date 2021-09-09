@@ -1,12 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-
-// ASSIGN EXPRESS
-const app = express();
-
 // IMPORT DB
 require('./src/config/db')
-
+// ASSIGN EXPRESS
+const app = express();
 
 // PORT MONITOR
 app.listen(8080, () => 

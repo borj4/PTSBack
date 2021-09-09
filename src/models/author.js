@@ -1,9 +1,15 @@
-module.exports = (sequelize, type) => sequelize.define('author',{
-    id: {
-        primarykey: true,
-        type: type.INTEGER,
-        autoIncrement: true
+const Sequelize = require('sequelize');
+const sequelize = require('../config/db');
+
+const Author = sequelize.define('author',{
+    uuid: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV1,
+        primaryKey: true,
+        allowNull: false,
     },
-    first_name: type.STRING,
-    last_name: type.STRING
-}); 
+    first_name: Sequelize.STRING,
+    last_name: Sequelize.STRING
+});
+
+module.exports = Author;
