@@ -7,7 +7,7 @@ Author.hasMany(Books);
 
 // CONNECT TO DB
 sequelize
-    .sync({ force: false })
-    .then((result)=>console.log('authors tables synchronized >>> '+result))
-    .catch(error=>console.log('authors tables not sync because >> '+error));
+    .sync({ force: true })
+    .then((result)=>console.log('tables synchronized >>> '+result))
+    .catch(error=>console.log('tables dont sync because >> '+error));
 

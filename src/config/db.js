@@ -8,8 +8,7 @@ const sequelize = new Sequelize(
     process.env.dbUsername,
     process.env.dbPassword,
         {
-            host: 'database-1.csafvftyick0.us-east-2.rds.amazonaws.com',
-            port: 3306,
+            host: 'db4free.net',
             dialect: 'mysql',
         });
 
