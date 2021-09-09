@@ -1,10 +1,12 @@
-const Sequelize = require('sequelize'); //maybe destructured
+const Sequelize = require('sequelize');
+
+const dotenv = require('dotenv').config();
 
 // DB SETTINGS
 const sequelize = new Sequelize(
-        'database-1', // db name 
-        'admin', // db username
-        'soamee1pt', // db password
+    process.env.dbName,
+    process.env.dbUsername,
+    process.env.dbPassword,
         {
             host: 'database-1.csafvftyick0.us-east-2.rds.amazonaws.com',
             port: 3306,
