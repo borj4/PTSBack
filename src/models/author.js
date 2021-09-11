@@ -7,9 +7,16 @@ const Author = sequelize.define('author',{
         defaultValue: Sequelize.UUIDV1,
         primaryKey: true,
         allowNull: false,
+        unique: true,
     },
-    first_name: Sequelize.STRING,
-    last_name: Sequelize.STRING
+    first_name: {
+        type: Sequelize.STRING,
+        // unique: true, // VALIDATION ERROR
+    },
+    last_name: {
+        type: Sequelize.STRING,
+        // unique: true, // VALIDATION ERROR
+    },
 });
 
 module.exports = Author;

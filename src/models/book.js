@@ -7,9 +7,16 @@ const Book = sequelize.define('book',{
         defaultValue: Sequelize.UUIDV1,
         primaryKey: true,
         allowNull: false,
+        unique: true,
     },
-    name: Sequelize.STRING,
-    isbn: Sequelize.STRING,
+    name:  {
+        type: Sequelize.STRING,
+        // unique: false,
+    },
+    isbn:  {
+        type: Sequelize.STRING,
+        // unique: true,
+    },
 }); 
 
 module.exports = Book;
