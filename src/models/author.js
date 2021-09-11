@@ -8,6 +8,7 @@ const Author = sequelize.define('author',{
         primaryKey: true,
         allowNull: false,
         unique: true,
+        autoIncrement: true
     },
     first_name: {
         type: Sequelize.STRING,
