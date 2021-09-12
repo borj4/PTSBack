@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const sequelize = require('../config/db');
 // IMPORT MODELS
 const { Book, Author } = require('../index');
 
@@ -28,19 +29,14 @@ router.get('/author/:bookId', async (req,res) => {
     res.json(books);
 });
 
+// POST DOESNT WORKS
 router.post('/author', async (req,res) => {
-    const author = await Author.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name
-    });
+    const author = await Author.create(req.body);
     res.json(author);
 });
 
-router.post('book', async (req,res) => {
-    const books = await Book.create({
-        name: req.body.name,
-        isbn: req.body.isbn
-    });
+router.post('/book', async (req,res) => {
+    const books = await Book.create( req.body );
     res.json(books);
 });
 
