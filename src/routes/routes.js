@@ -29,7 +29,7 @@ router.get('/author/:bookId', async (req,res) => {
     res.json(books);
 });
 
-// POST DOESNT WORKS
+// POST DONT WORK //
 router.post('/author', async (req,res) => {
     const author = await Author.create(req.body);
     res.json(author);
